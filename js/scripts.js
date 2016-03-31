@@ -12,6 +12,7 @@ var convert = function(digits) {
     else if (digits[index] === "7") {digits[index] = "fee";}
     else if (digits[index] === "8") {digits[index] = "feee";}
     else if (digits[index] === "9") {digits[index] = "eg";}
+    else {digits[index] = "";}
   }
   digits[0] = digits[0].replace(/e/g, "I");
   digits[0] = digits[0].replace(/f/g, "V");
@@ -29,6 +30,16 @@ var convert = function(digits) {
   }
   if (digits[3]){
     digits[3] = digits[3].replace(/e/g, "M");
+    digits[3] = digits[3].replace(/f/g, "A");
+    digits[3] = digits[3].replace(/g/g, "B");
+  }
+  if (digits[4]){
+    digits[4] = digits[4].replace(/e/g, "B");
+    digits[4] = digits[4].replace(/f/g, "E");
+    digits[4] = digits[4].replace(/g/g, "F");
+  }
+  if (digits[5]){
+    digits[5] = digits[5].replace(/e/g, "F");
   }
   digits.reverse();
   console.log(digits);
